@@ -57,13 +57,8 @@ async function playProceduralTick() {
 // Expose globally for app.js
 window.playProceduralTick = playProceduralTick;
 
-document.addEventListener("DOMContentLoaded", () => {
-    // Helper to pause execution for X milliseconds
-    const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
-    // ==========================================
-    // 2. NAVIGATION LOGIC (SPA VERSION)
-    // ==========================================
+// Navigation setup - will be called after app.js loads
+window.setupKeyboardNavigation = () => {
     const buttons = document.querySelectorAll(".bar-link");
 
     buttons.forEach((btn) => {
@@ -102,4 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     });
-});
+};
+
+// Helper to pause execution for X milliseconds
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
