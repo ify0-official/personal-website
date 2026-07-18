@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>if you *</title>
+        <link rel="stylesheet" href="./styles.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+            rel="stylesheet"
+        />
+        <script src="./scripts.js"></script>
+    </head>
+    <body>
+        <a href="#main-content" class="skip-link">skip to content</a>
+
+        <section id="main-content">
+            <h1 class="selectable" tabindex="0"># contact</h1>
+            <p class="selectable" tabindex="0">
+                don't contact me. i have stuffs to do, and i don't check social medias or gmails or anything that much(very rare)
+            </p>
+        </section>
+
+        <nav class="bottom-bar" aria-label="Main navigation">
+            <ul class="bar-list">
+                <li class="bar-item" aria-hidden="true">
+                    <span class="bar-label">open</span>
+                </li>
+
+                <!-- Page 1: Home -->
+                <li class="bar-item">
+                    <button
+                        type="button"
+                        class="bar-link"
+                        id="nav-1"
+                        data-page="index.html"
+                        tabindex="-1"
+                    >
+                        home
+                    </button>
+                </li>
+
+                <!-- Page 2: Works -->
+                <li class="bar-item">
+                    <button
+                        type="button"
+                        class="bar-link"
+                        id="nav-2"
+                        data-page="works.html"
+                        tabindex="-1"
+                    >
+                        works
+                    </button>
+                </li>
+
+                <!-- Page 3: Roadmap -->
+                <li class="bar-item">
+                    <button
+                        type="button"
+                        class="bar-link"
+                        id="nav-3"
+                        data-page="roadmap.html"
+                        tabindex="-1"
+                    >
+                        roadmap
+                    </button>
+                </li>
+
+                <!-- Page 4: inquiries -->
+                <li class="bar-item">
+                    <button
+                        type="button"
+                        class="bar-link"
+                        id="nav-4"
+                        data-page="inquiries.html"
+                        tabindex="-1"
+                    >
+                        inquiries
+                    </button>
+                </li>
+
+                <!-- Page 5: Contacts -->
+                <li class="bar-item">
+                    <button
+                        type="button"
+                        class="bar-link"
+                        id="nav-5"
+                        data-page="contacts.html"
+                        tabindex="-1"
+                    >
+                        contacts
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </body>
+</html>

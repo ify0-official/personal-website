@@ -1,0 +1,56 @@
+.qna-container {
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: stretch;
+    min-height: 200px; /* Set a consistent minimum height */
+}
+
+.question-pair {
+    border: 1px solid black;
+    flex: 1;
+    min-width: 120px;
+    min-height: 150px; /* Ensure all items have same base height */
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    overflow: hidden;
+    position: relative; /* For proper stacking context */
+}
+
+.question-pair .answer {
+    visibility: hidden;
+    opacity: 0;
+    max-height: 0; /* Start collapsed */
+}
+
+.question-pair:focus,
+.question-pair:focus-within {
+    flex: 3 1 200px; 
+    z-index: 1;
+}
+
+.question-pair .question {
+    white-space: nowrap;
+    overflow: hidden;
+    visibility: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.question-pair:focus .question,
+.question-pair:focus-within .question {
+    visibility: visible;
+}
+
+.question-pair:focus .answer,
+.question-pair:focus-within .answer {
+    visibility: visible;
+    opacity: 1;
+    max-height: 10rem;
+}

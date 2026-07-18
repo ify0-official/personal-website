@@ -1,0 +1,89 @@
+/* ─ Container ─────────────────────────────────── */
+.work-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+}
+
+/* ── Fixed Preview Image ──────────────────────── */
+.selectable-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 16rem;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    z-index: 100;
+}
+
+/* ── Each project pair ─────────────────────────── */
+.project-pair {
+    position: relative;
+    width: 100%;
+    z-index: 2;
+}
+
+.project-name {
+    text-align: right;
+    width: 100% !important;
+    max-width: 100%;
+    display: block;
+    cursor: pointer;
+    padding: 0 0.3rem 0 0;
+}
+
+.project-name[data-super-hover-active] {
+    background: repeating-conic-gradient(var(--fgc) 0% 25%, transparent 0% 100%)
+        1px 0.5px / 2px 2px;
+}
+
+.project-name:focus {
+    background: repeating-conic-gradient(var(--fgc) 0% 25%, transparent 0% 100%)
+        1px 0.5px / 2px 2px;
+}
+
+/* ── No hire ────────────────────────────────────── */
+@keyframes shake-text {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(-4px);
+    }
+    40% {
+        transform: translateX(4px);
+    }
+    60% {
+        transform: translateX(-3px);
+    }
+    80% {
+        transform: translateX(3px);
+    }
+}
+
+.no-hire.shaking {
+    animation: shake-text 0.4s ease-in-out;
+}
+
+.no-hire:focus,
+.no-hire:active {
+    outline: none;
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 600px) {
+    .project-text {
+        display: none;
+    }
+
+    .project-number {
+        display: inline;
+    }
+}

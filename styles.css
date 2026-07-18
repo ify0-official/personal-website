@@ -1,0 +1,292 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Commit Mono Variable";
+    src: url("assets/fonts/CommitMono VariableFont.woff2") format("woff2");
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+@keyframes flash-focus {
+    0% {
+        color: var(--fgc);
+    }
+    50% {
+        background: repeating-conic-gradient(
+                var(--fgc) 0% 25%,
+                transparent 0% 100%
+            )
+            1px 0.5px / 2px 2px;
+        color: var(--fgc);
+    }
+    100% {
+        background-color: var(--fgc);
+        color: var(--bgc);
+    }
+}
+
+:root {
+    --bgc: oklch(74% 0 0);
+    --fgc: oklch(18% 0 0);
+
+    --font-weight-normal: 450;
+    --font-width-normal: 100;
+    --font-slant-normal: 0;
+
+    --font-weight-bold: 650;
+    --font-width-bold: 95;
+    --font-slant-bold: 0;
+
+    --font-weight-italic: 450;
+    --font-width-italic: 100;
+    --font-slant-italic: -10;
+
+    --weight-thin: 100;
+    --weight-light: 300;
+    --weight-regular: 450;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 650;
+    --weight-extrabold: 750;
+    --weight-black: 900;
+
+    --width-ultra-condensed: 50;
+    --width-extra-condensed: 62.5;
+    --width-condensed: 75;
+    --width-semi-condensed: 87.5;
+    --width-normal: 100;
+    --width-semi-expanded: 112.5;
+    --width-expanded: 125;
+    --width-extra-expanded: 150;
+    --width-ultra-expanded: 200;
+
+    --slant-upright: 0;
+    --slant-slight: -5;
+    --slant-italic: -10;
+    --slant-heavy: -15;
+}
+
+html {
+    font-size: clamp(1rem, 0.5rem + 0.5vw, 1.25rem);
+}
+
+body {
+    min-height: 100dvh;
+    background-color: var(--bgc);
+    color: var(--fgc);
+    line-height: 1.6;
+
+    display: grid;
+    grid-template-rows: auto auto;
+
+    font-family: "Commit Mono Variable", monospace;
+    font-kerning: auto;
+
+    /* Using variable font properties */
+    font-weight: var(--font-weight-normal);
+    font-variation-settings:
+        "wght" var(--font-weight-normal),
+        "wdth" var(--font-width-normal),
+        "slnt" var(--font-slant-normal);
+}
+
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 0.5rem;
+    z-index: 2000;
+    padding: 0.125rem 0.25rem;
+    background-color: var(--fgc);
+    color: var(--bgc);
+    font-family: inherit;
+    text-decoration: none;
+    font-weight: bold;
+
+    outline: 2px solid var(--fgc);
+    outline-offset: 1px;
+}
+
+.skip-link:focus {
+    top: 0.5rem;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+    align-content: start;
+    padding: 2rem 1rem;
+    padding-bottom: 4rem;
+}
+
+h1,
+h2,
+h3 {
+    letter-spacing: -7%;
+    font-weight: var(--font-weight-bold);
+}
+
+p {
+    letter-spacing: -5%;
+}
+
+code {
+    background-color: var(--fgc);
+    color: var(--bgc);
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: "Commit Mono Variable", monospace;
+    letter-spacing: 0;
+}
+
+#main-content {
+    width: 90vw;
+    max-width: 700px;
+    min-width: 300px;
+    text-wrap: stable;
+    justify-self: center;
+    align-self: center;
+}
+
+.selectable {
+    width: fit-content;
+    max-width: 100%;
+
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    padding: 0.1em 0.3em;
+}
+
+.selectable:focus {
+    background-color: var(--fgc);
+    color: var(--bgc);
+    animation: flash-focus 0.1s forwards;
+    outline: 2px solid var(--fgc);
+    outline-offset: -2px;
+}
+
+.selectable:focus code {
+    background-color: var(--bgc);
+    color: var(--fgc);
+}
+
+.selectable:hover {
+    cursor: pointer;
+    background: repeating-conic-gradient(var(--fgc) 0% 25%, transparent 0% 100%)
+        1px 0.5px / 2px 2px;
+}
+
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 0.15rem;
+    padding-bottom: 0.15rem;
+    background-color: var(--bgc);
+    z-index: 1000;
+}
+
+.bar-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    list-style: none;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    align-items: stretch;
+}
+
+.bar-item {
+    white-space: nowrap;
+    display: flex;
+}
+
+.bar-item:first-child {
+    margin-right: 1.5rem;
+    font-weight: var(--font-weight-bold);
+    cursor: default;
+    user-select: none;
+    pointer-events: none;
+    align-items: center;
+}
+
+.bar-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 0.5rem;
+    background: transparent;
+    color: var(--fgc);
+    border: 0px solid transparent;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0s;
+}
+
+.bar-link.force-focus,
+.bar-link:focus {
+    outline: 2px solid var(--fgc);
+    outline-offset: -2px;
+    animation: flash-focus 0.1s forwards;
+    background-color: var(--fgc);
+    color: var(--bgc);
+}
+
+.bar-link:hover {
+    outline: 0;
+    background: repeating-conic-gradient(var(--fgc) 0% 25%, transparent 0% 100%)
+        1px 0.5px / 2px 2px;
+    color: var(--fgc);
+}
+
+@media (max-width: 600px) {
+    section {
+        padding: 1rem 0.5rem;
+        padding-bottom: 3.5rem;
+    }
+
+    .bar-item:first-child {
+        margin-right: 0.75rem;
+    }
+
+    .bar-link {
+        padding: 0 0.35rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bar-link:focus {
+        animation: none;
+        background-color: var(--fgc);
+        color: var(--bgc);
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media (forced-colors: active) {
+    .bar-link:focus {
+        outline: 2px solid LinkText;
+    }
+
+    .bar-link:hover {
+        background: transparent;
+        border: 1px solid LinkText;
+    }
+}
