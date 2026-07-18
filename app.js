@@ -318,5 +318,10 @@ function playProceduralTick() {
 
 // Initialize on DOM ready
 document.addEventListener("DOMContentLoaded", () => {
-    loadAllPages();
+    loadAllPages().then(() => {
+        // Setup keyboard navigation after pages are loaded
+        if (typeof window.setupKeyboardNavigation === 'function') {
+            window.setupKeyboardNavigation();
+        }
+    });
 });
