@@ -89,10 +89,12 @@ window.setupKeyboardNavigation = () => {
                 const nextPage = targetButton.getAttribute("data-page");
 
                 // In SPA mode, just show the page instead of navigating
-                if (typeof showPage === 'function') {
+                if (typeof window.showPage === 'function') {
                     await delay(30);
-                    showPage(nextPage);
+                    window.showPage(nextPage);
                     targetButton.focus({ preventScroll: true });
+                } else {
+                    console.error('showPage function not found');
                 }
             }
         }

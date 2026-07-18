@@ -325,3 +325,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+// Expose showPage globally for keyboard navigation
+window.showPage = showPage;
