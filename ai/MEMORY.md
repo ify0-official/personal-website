@@ -25,7 +25,18 @@ This file stores enduring knowledge about the project:
 
 ### Session Notes
 
-#### Current Session - suggestion/ Directory Creation
+#### Current Session - Navigation Fix
+- **Issue:** Keyboard number keys (1-5) for page navigation were not working in SPA mode
+- **Root Cause:** Mismatch between `data-page` attribute values (HTML filenames like `index.html`) and the page section IDs expected by `showPage()` function (`home`, `works`, etc.)
+- **Fix Applied:** Updated all navigation button `data-page` attributes in 5 HTML files to use consistent page name identifiers:
+  - `data-page="home"` (was `index.html`)
+  - `data-page="works"` (was `works.html`)  
+  - `data-page="roadmap"` (was `roadmap.html`)
+  - `data-page="inquiries"` (was `inquiries.html`)
+  - `data-page="contacts"` (was `contacts.html`)
+- **Files Modified:** `index.html`, `contacts.html`, `works.html`, `roadmap.html`, `inquiries.html`
+
+#### Previous Session - suggestion/ Directory Creation
 - Created `suggestion/` directory with structured feedback loop system
 - Added 4 documentation files: ENTRY.md, SUGGESTION.md, SOLUTION.md, PROBLEM.md
 - Identified 5 improvement suggestions for the portfolio website

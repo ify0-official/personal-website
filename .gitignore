@@ -4,35 +4,34 @@
 __pycache__/
 *.o
 *.obj
-dist/
-build/
-target/
+*.class
+*.exe
+*.dll
+*.so
+*.a
+*.out
 
 # Dependencies
-.venv/
-venv/
 node_modules/
-.julia/
-zig-cache/
-
-# Logs and temp files
-*.log
-*.tmp
-*.swp
-*.swo
-
-# Environment
+venv/
+.venv/
 .env
 .env.local
 .env.*
 
+# Build directories
+dist/
+build/
+target/
+*.log
+*.tmp
+*.swp
+
 # Editors
 .vscode/
 .idea/
-*.swp
-*.swo
 
-# OS
+# System files
 .DS_Store
 Thumbs.db
 
@@ -41,7 +40,7 @@ coverage/
 htmlcov/
 .coverage
 
-# Compressed files
+# Compression
 *.zip
 *.gz
 *.tar
@@ -64,314 +63,4 @@ htmlcov/
 *.tar.bz2
 *.tar.xz
 *.tar.zst
-
-# Python specific
-*.pyc
-__pycache__/
-*.pyo
-*.pyd
-.Python
-*.so
-*.egg-info/
-.eggs/
-.mypy_cache/
-.pytest_cache/
-.tox/
-.coverage
-nosetests.xml
-*.cover
-*.log
-.git/
-.svn/
-.hg/
-
-# Node specific
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-lerna-debug.log*
-
-# Java specific
-*.class
-*.jar
-*.war
-*.ear
-*.tar.gz
-.DS_Store
-!src/main/**
-!src/test/**
-
-# C/C++ specific
-*.o
-*.obj
-*.exe
-*.dll
-*.so
-*.a
-*.dylib
-*.plist
-*.bin
-
-# Go specific
-*.exe
-*.exe~
-*.dll
-*.so
-*.dylib
-*.test
-*.prof
-
-# Ruby specific
-*.gem
-*.rbc
-*.sassc
-.sass-cache
-capybara-*.html
-.rspec
-vendor/bundle
-vendor/cache
-vendor/gems
-vendor/ruby
-
-# Rust specific
-target/
-Cargo.lock
-
-# Gradle specific
-.gradle/
-build/
-
-# Maven specific
-target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
-dependency-reduced-pom.xml
-buildNumber.properties
-.mvn/timing.properties
-
-# Visual Studio Code
-.vscode/
-!.vscode/extensions.json
-!.vscode/settings.json
-
-# JetBrains IDEs
-.idea/
-
-# Vim
-*.swp
-*.swo
-*~
-
-# Emacs
-*~
-\#*\#
-/.emacs.desktop
-/.emacs.desktop.lock
-*.elc
-auto-save-list
-tramp
-.\#*
-# Org-mode
-.org-id-locations
-*_archive/
-
-# Python virtual env
-venv/
-ENV/
-env/
-.venv/
-.env/
-ENV/
-
-# NodeJS
-node_modules/
-.npm/
-.npx/
-
-# Bower
-bower_components/
-
-# Grunt
-.grunt/
-grunt/
-Gruntfile.js.bak
-
-# Gulp
-.gulp/
-gulp/
-gulpfile.js.bak
-
-# JSHint
-.jshintrc
-.jshintignore
-
-# ESLint
-.eslintcache
-.eslintignore
-
-# Webpack
-.webpack.cache/
-
-# Database
-*.db
-*.db-journal
-
-# Testing
-.rspec
-spec/reports/
-test/tmp/
-test/version_tmp/
-tmp/
-
-# Documentation
-docs/_build/
-
-# Temporary folders
-tmp/
-temp/
-
-# Logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-lerna-debug.log*
-
-# Environment specific
-.env
-.env.local
-.env.*
-!.env.example
-!.env.sample
-!.env.template
-
-# Secrets
-secrets/
-*.key
-*.pem
-*.crt
-*.cert
-*.secret
-
-# Backup files
-*.bak
-*.backup
-*.old
-*.orig
-*.rej
-*.~
-*#
-
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-desktop.ini
-
-# Linux
-*~
-*.swp
-*.swo
-.*.swp
-.*.swo
-
-# Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-$RECYCLE.BIN/
-*.lnk
-
-# macOS
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-.AppleDouble
-.LSOverride
-Icon?
-VolumeIcon.icns
-
-# Android
-*.apk
-*.aar
-*.dex
-
-# iOS
-*.ipa
-*.dSYM.zip
-*.dSYM
-
-# Build outputs
-*.o
-*.obj
-*.exe
-*.dll
-*.so
-*.a
-*.dylib
-*.plist
-*.bin
-*.out
-*.app
-*.jar
-*.war
-*.ear
-*.tar.gz
-*.tar
-*.zip
-*.rar
-*.7z
-*.gz
-*.bz2
-*.xz
-*.zst
-*.lz4
-*.lzh
-*.cab
-*.arj
-*.rpm
-*.deb
-*.Z
-*.lz
-*.lzo
-
-# Distribution / packaging
-.Python
-*.so
-*.pyc
-*.pyo
-*.pyd
-*$py.class
-*.tar.gz
-*.egg
-*.egg-info/
-.egg-info/
-dist/
-build/
-develop-eggs/
-.installed.cfg
-.tox/
-.nox/
-.pytest_cache/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.log
-.git/
-.hg/
-.svn/
- CVS/
 ```
